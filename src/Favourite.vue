@@ -135,7 +135,7 @@ export default {
 		align-items: center;
 		justify-content: center;
 		padding: .6rem;
-		background: rgba(0,0,0,0.6);
+		background: rgba(0,0,0,0.5);
 		border-radius: 50%;
 		box-shadow: none;
 		border: none;
@@ -156,7 +156,7 @@ export default {
 		left: 0;
 		right: 0;
 		padding: 1.5rem 1rem;
-		background: rgba(0,0,0,0.85);
+		background: rgba(0,0,0,0.5);
 		user-select: none;
 	}
 	.movies__name{
