@@ -5,7 +5,9 @@ script:
   - npm run build
   - echo "AWS COMMIT - $TRAVIS_COMMIT"
   - mkdir -p dist/@DavidSprla/favourite/$TRAVIS_COMMIT
+  - mkdir -p dist/@DavidSprla/favourite/$TRAVIS_COMMIT/js
   - mv dist/*.* dist/@DavidSprla/favourite/$TRAVIS_COMMIT/
+  - mv dist/js/*.* dist/@DavidSprla/favourite/$TRAVIS_COMMIT/js/
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
