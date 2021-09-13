@@ -4,7 +4,7 @@
 			<h1 class="movies__title">
 				Favourite
 			</h1>
-			<div class="movies__grid">
+			<div v-if="movies.length !== 0" class="movies__grid">
 				<div v-for="movie in movies" :key="movie.id" class="movies__item">
 					<div class="movies__background"></div>
 					<button type="button" class="movies__favourite" :class="{'movies__favourite--active': movie.favourite}">
@@ -18,6 +18,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div v-else class="movies__empty">
+				Favourite list is empty
 			</div>
 		</div>
   </div>
@@ -165,5 +168,13 @@ export default {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+
+	.movies__empty{
+		padding: 6rem 0;
+		text-align: center;
+		font-size: 2.6rem;
+		font-weight: 500;
+		color: var(--dark-gray);
 	}
 </style>
