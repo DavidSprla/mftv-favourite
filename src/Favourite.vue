@@ -33,9 +33,19 @@ export default {
 		inspect: false,
     movies: JSON.parse(localStorage.getItem("movies")) || []
   }),
-	beforeMount() {
-		const inspectStorage = JSON.parse(localStorage.getItem('inspect'))
+	methods: {
+		handleInspect(event) {
+			this.inspect = event.detail 
+		}
+	},
+	mounted() {
+		window.addEventListener('inspectEvent', this.handleInspect)
+
+		const inspectStorage = JSON.parse(localStorage.getItem('inspect')) || false
 		this.inspect = inspectStorage
+	},
+	destroyed() {
+		window.removeEventListener('inspectEvent', this.handleInspect)
 	}
 }
 </script>
